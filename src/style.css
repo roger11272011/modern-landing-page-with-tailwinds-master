@@ -9,7 +9,7 @@
 }
 
 .btn-purple {
-  @apply bg-bookmark-purple text-white;
+  @apply bg-bookmark-grey text-white;
 }
 
 .btn-white {

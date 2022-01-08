@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:tailwinds": "tailwind build src/style.css -o public/style.css",
-    "build":"postcss src/style.css -o public/style.css"
+    "build": "postcss src/style.css -o public/style.css",
+    "watch": "postcss src/style.css -o public/style.css -w"
   },
   "repository": {
     "type": "git",
