@@ -9,8 +9,52 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Bookmark Landing Page</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="ham.js"></script>
+  <title>新楓之谷</title>
   <style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      position: relative;
+    }
+
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+      display: none;
+    }
+
+    /* Style navigation menu links */
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      background: black;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Style the active link (or home/logo) */
+    .active {
+      color: white;
+    }
+
     .carousel-open:checked+.carousel-item {
       position: static;
       opacity: 100;
@@ -75,27 +119,55 @@
 </head>
 
 <body class="font-Poppins bg-bookmark-blue">
+
   <!-- Header -->
-  <header class="bg-white">
+  <header class="bg-white " id="home">
     <nav class="container flex items-center py-4 ">
-      <div class="py-1 "><img
-          src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/logo_ms.png" alt="" /></div>
-      <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-xl">
-        <li class="cursor-pointer"><a href="#Features">職業</a> </li>
+      <div class="py-1 "><a href="#home"><img
+          src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/logo_ms.png" alt="" /></a></div>
+      <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-bookmark-blue uppercase text-lg">
+        <li class="cursor-pointer"><a href="#Features">職業介紹</a> </li>
         <li class="cursor-pointer"><a href="#Download">下載專區</a></li>
         <li class="cursor-pointer"><a href="#QA">系統介紹</a></li>
-        <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase">Login</button>
+        <li class="cursor-pointer"><a href="#contact">聯絡我們</a></li>
+        <li class="cursor-pointer"><a href="#psint">玩家創作</a></li>
+        <button type="button" class="bg-bookmark-red text-white rounded-md px-7 py-3 uppercase"><a
+            href="https://www.beanfun.com/">Login</a> </button>
       </ul>
       <!--漢堡-->
-      <div class="flex sm:hidden flex-1 justify-end">
-        <i class="text-2xl fas fa-bars"></i>
-      </div>
+
     </nav>
   </header>
-
+  <div class="sm:hidden">
+    <div class="topnav">
+      <a href="#https://www.beanfun.com/" class="active bg-bookmark-red">LOGIN</a>
+      <div id="myLinks">
+        <a href="#Features">職業介紹</a>
+        <a href="#Download">下載專區</a>
+        <a href="#QA">系統介紹</a>
+        <a href="#contact">聯絡我們</a>
+        <a href="#paint">玩家創作</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+    <!-- End smartphone / tablet look -->
+  </div>
+  </div>
   <!-- Hero -->
   <section class="relative bg-center mx-auto bg-cover bg-opacity-70"
-    style="background-image: url(imgs/1638322375424.jpg); padding: 70px 70px; height: auto;">
+    style="background-image: url(imgs/1638322375424.jpg); padding: 70px 70px; height: auto;" >
     <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
       <!-- Content -->
       <div class="flex flex-col items-center lg:items-start">
@@ -241,51 +313,57 @@
   <section class="bg-bookmark-blue py-20 " id="Features">
     <!-- Heading -->
     <div class="container">
-    <div class="sm:w-3/4 lg:w-5/12 mx-auto">
-      <div><img src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_sys.png" alt=""></div>
-    </div></div>
+      <div class="sm:w-3/4 lg:w-5/12 mx-auto">
+        <div><img src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_roles.png"
+            alt=""></div>
+      </div>
+    </div>
     <!-- Feature #1 -->
     <div class="p-0">
-      <div class="relative mt-20 lg:mt-24 h-auto w-full">
+      <div class="relative mt-20 lg:mt-24 h-auto w-full" data-aos="zoom-in">
         <img class="w-screen"
           src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/roles/detail/2-5.jpg"
           alt="">
       </div>
       <!-- Feature #2 -->
-      <div class="relative mt-10 lg:mt-20">
+      <div class="relative mt-10 lg:mt-20" data-aos="zoom-in">
         <img class="w-screen"
           src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/roles/detail/2-4.jpg"
           alt="">
       </div>
       <!-- Feature #3 -->
-      <div class="relative mt-10 lg:mt-20">
+      <div class="relative mt-10 lg:mt-20" data-aos="zoom-in">
         <img class="w-screen"
           src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/roles/detail/2-3.jpg"
           alt="">
       </div>
-      <div class="relative mt-10 lg:mt-20">
+      <div class="relative mt-10 lg:mt-20" data-aos="zoom-in">
         <img class="w-screen"
           src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/roles/detail/2-2.jpg"
           alt="">
       </div>
-      <div class="relative mt-10 lg:mt-20">
+      <div class="relative mt-10 lg:mt-20" data-aos="zoom-in">
         <img class="w-screen"
           src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/roles/detail/2-1.jpg"
           alt="">
       </div>
     </div>
-    
+
   </section>
 
   <!-- Download -->
   <section class="py-20 mt-10">
     <!-- Heading -->
     <div class="container">
-    <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
-      <div id="Download"><img src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_download.png" alt=""></div>
-    </div></div>
+      <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
+        <div id="Download"><img
+            src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_download.png"
+            alt=""></div>
+      </div>
+    </div>
     <!-- Cards -->
-    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16">
+    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16" data-aos="fade-up"
+    data-aos-anchor-placement="center-bottom">
       <!-- Card 1 -->
       <div class="flex flex-col rounded-md shadow-md lg:mb-16 bg-gray-300">
         <div class="p-6 flex flex-col items-center">
@@ -341,10 +419,12 @@
 
   <!-- FAQ -->
   <section class="bg-gray-600 py-20">
-    <div class="container">
+    <div class="container" id="QA">
       <!-- Heading -->
       <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2 pb-5">
-        <div id="QA"><img src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_sys.png" alt=""></div>
+        <div ><img
+            src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_sys.png" alt="">
+        </div>
       </div>
       <!-- FAQ Items -->
       <section class="shadow row bg-white rounded-lg">
@@ -421,26 +501,118 @@
                 src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/sys3-1.png" alt="">
             </div>
           </div>
-          
+
         </div>
         <div class="flex flex-col sm:w-3/4 lg:w-5/12 mx-auto">
-        <button type="button" class="mt-12 flex self-center btn btn-purple hover:bg-bookmark-white hover:text-black ">
-          More
-        </button>
+          <button type="button" class="mt-12 flex self-center btn btn-purple hover:bg-bookmark-white hover:text-black ">
+            More
+          </button>
         </div>
     </div>
   </section>
 
+  <section class="py-20 mt-10">
+    <!-- Heading -->
+    <div class="container" id="paint">
+      <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
+        <div id="Download"><img
+            src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/title_artwork_member.png"
+            alt=""></div>
+      </div>
+      <div class=" mx-auto flex items-center flex-wrap pt-4 pb-12" data-aos="flip-left">
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+            <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1593431810134.jpg">
+            <div class="pt-3 flex items-center justify-between">
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+            </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924067901.jpg">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+        </div>
+      </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+            <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924075870.jpg">
+            <div class="pt-3 flex items-center justify-between">
+                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+                </svg>
+            </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924082042.jpg">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592857744344.jpg">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924113230.png">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924119792.jpg">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924126620.jpg">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+        <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924170465.jpg">
+        <div class="pt-3 flex items-center justify-between">
+            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+            </svg>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" data-aos="flip-left">
+          <img class="hover:grow hover:shadow-lg" src="https://tw.hicdn.beanfun.com/beanfun/WebImage/1592924177293.jpg">
+          <div class="pt-3 flex items-center justify-between">
+              <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
+              </svg>
+            </div>
+          </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- Contact Us -->
-  <section class="bg-bookmark-blue text-white py-20">
+  <section class="bg-bookmark-grey text-white py-20" id="contact">
     <div class="container">
       <div class="sm:w-3/4 lg:w-2/4 mx-auto">
         <p class="font-light uppercase text-center mb-8">35,000+ ALREADY JOINED</p>
         <h1 class="text-3xl text-center">Stay up-to-date with what we’re doing</h1>
         <div class="flex flex-col sm:flex-row gap-6 mt-8">
-          <input type="text" placeholder="Enter your email address"
+          <input type="text" placeholder="What do you need?"
             class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black" />
           <button type="button" class="btn bg-bookmark-red hover:bg-bookmark-white hover:text-black">
             Contact Us
@@ -454,11 +626,13 @@
   <footer class="bg-white py-8">
     <div class="container flex flex-col md:flex-row items-center">
       <div class="flex flex-1 flex-wrap items-center justify-center md:justify-start gap-12">
-        <img src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/logo_ms.png" alt="" />
-        <ul class="flex text-bookmark-blue uppercase gap-12 text-xl">
-          <li class="cursor-pointer"><a href="#Features">職業</a> </li>
+        <a href="#home"><img src="https://tw.hicdn.beanfun.com/beanfun/GamaWWW/MapleStory/official/2020/images/logo_ms.png" alt="" /></a>
+        <ul class="flex text-bookmark-blue uppercase gap-12 text-lg">
+          <li class="cursor-pointer"><a href="#Features">職業介紹</a> </li>
           <li class="cursor-pointer"><a href="#Download">下載專區</a></li>
           <li class="cursor-pointer"><a href="#QA">系統介紹</a></li>
+          <li class="cursor-pointer"><a href="#contact">聯絡我們</a></li>
+          <li class="cursor-pointer"><a href="#paint">玩家創作</a></li>
         </ul>
       </div>
       <div class="flex gap-10 mt-12 md:mt-0">
@@ -467,6 +641,11 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
